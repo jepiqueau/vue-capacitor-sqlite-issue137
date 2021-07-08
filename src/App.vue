@@ -7,38 +7,14 @@
 </template>
 
 <script>
-import {
-  createTables,
-  dropTables,
-  importTwoTeams,
-  importTwelveMembers,
-} from "@/utils/utils-db";
+import { defineComponent } from "vue";
 
-export default {
+export default defineComponent({
   name: "App",
-  mounted() {
-    this.initDB();
+  async created() {
+    console.log("$$$ in App.vue created() $$$");
   },
-  methods: {
-    async initDB() {
-      // Get shared SQLite connection
-      const sqliteConnection = this.$sqliteConnection;
-      // Create a connection to the MY_DB db
-      console.log("Make initial connection to db...");
-      let db = await sqliteConnection.createConnection("MY_DB", false);
-      // Open the MY_DB db
-      await db.open();
-      // Drop existing db tables for testing purposes
-      await db.execute(dropTables);
-      // Create the db tables if they don't already exist
-      await db.execute(createTables);
-      // Add some sample data to the tables
-      await db.execute(importTwoTeams);
-      await db.execute(importTwelveMembers);
-      // await sqliteConnection.closeConnection("MY_DB", false);
-    },
-  },
-};
+});
 </script>
 
 <style>
