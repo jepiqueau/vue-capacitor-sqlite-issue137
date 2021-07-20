@@ -1,5 +1,7 @@
 # vue-capacitor-sqlite
 
+i have removed the TAG SUSPENSE
+
 ## Project setup
 ```
 npm install
