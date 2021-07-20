@@ -21,8 +21,8 @@ export default defineComponent({
     onMounted(async () => {
       let db;
       if (
-        !(await sqliteConnection.isConnection("MY_DB")) ||
-        !sqliteConnection.checkConnectionsConsistency()
+        !(await sqliteConnection.isConnection("MY_DB")).result ||
+        !(await sqliteConnection.checkConnectionsConsistency()).result
       ) {
         console.log("in Teams createConnection");
         // Create a connection to the MY_DB db
