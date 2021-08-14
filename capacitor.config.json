@@ -1,6 +1,8 @@
 {
-  "appId": "app.clevercrow.vuecapacitorsqlite",
+  "appId": "com.jeep.app.vue.sqlite",
   "appName": "vue-capacitor-sqlite",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
   "webDir": "dist",
-  "bundledWebRuntime": false
+  "cordova": {}
 }
